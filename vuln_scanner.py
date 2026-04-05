@@ -14,7 +14,7 @@ from modules.vulnerability_scanner import VulnerabilityScanner
 from modules.reporter import Reporter
 from modules.utils import setup_logging, print_banner, ColorPrint
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -276,6 +276,17 @@ async def run_scan(args: argparse.Namespace) -> Dict[str, Any]:
 
 def main():
     """Main entry point."""
+    
+    if sys.platform == 'win32':
+        try:
+            sys.stdout.reconfigure(encoding='utf-8')
+            sys.stderr.reconfigure(encoding='utf-8')
+        except AttributeError:
+            # Python < 3.7
+            import codecs
+            sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+            sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
+    
     # Print banner
     print_banner(__version__)
     
