@@ -4,6 +4,7 @@ A lightweight vulnerability and misconfiguration scanner written in Python.
 
 As you could probably guess from the title, the tool is designed to fully automate the initial recconnaisance and vulnerability discovery of an assessment. It identifies open services, grabs banners and checks for common misconfigurations, it also references software versions against known databases.
 
+<img width="1263" height="567" alt="image" src="https://github.com/user-attachments/assets/ef3eefe7-a9ab-4579-b69d-dea12c483a05" />
 
 
 
@@ -13,8 +14,9 @@ As you could probably guess from the title, the tool is designed to fully automa
 - Banner grabbing and service version detection.
 - Automated checks for missing security headers and exposed config files.
 - Automatic CVE Lookups on public databases.
-- Exporting as JSON, CSV or standard terminal output.
+- Exporting as JSON, CSV, HTML or standard terminal output.
 
+<img width="1345" height="880" alt="image" src="https://github.com/user-attachments/assets/65f92fa6-5880-4afb-9182-70c9cad5062a" />
 
 
 
@@ -39,6 +41,7 @@ pip install -r requirements.txt
 chmod +x vuln_scanner.py
 ```
 ## Usage
+<img width="977" height="915" alt="image" src="https://github.com/user-attachments/assets/344137d7-9c16-4222-a317-12b8eff71593" />
 
 ### Basic Syntax
 
