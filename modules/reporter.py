@@ -100,11 +100,11 @@ class Reporter:
         print("\n" + "="*80)
     
     def export_json(self, results: Dict[str, Any], filepath: str):
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=2, default=str)
     
     def export_csv(self, results: List[Dict[str, Any]], filepath: str):
-        with open(filepath, 'w', newline='') as f:
+        with open(filepath, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             
             # Header
@@ -140,7 +140,7 @@ class Reporter:
                     ])
     
     def export_text(self, results: Dict[str, Any], filepath: str):
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', ecoding='utf-8') as f:
             f.write("VULNERABILITY SCAN REPORT\n")
             f.write("="*80 + "\n\n")
             f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
@@ -424,7 +424,7 @@ class Reporter:
 </html>
 """
         
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(html)
 
 
